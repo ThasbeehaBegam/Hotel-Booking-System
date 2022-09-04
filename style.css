@@ -1,0 +1,51 @@
+body
+	{
+		background-color: #FFA07A;
+	}
+	p
+	{
+		font-size: 34px;
+		font-style: italic;
+		font-family: sans-serif;
+		text-align: center;
+		background-color:#90EE90;
+		color: black;
+	}
+	h1
+	{
+		position: absolute;
+		top: 25%;
+		left: 12%;
+	}
+	h2
+	{
+		position: absolute;
+		top: 25%;
+		right: 12%;
+	}
+	h3
+	{
+		position: absolute;
+		bottom: 0%;
+		left: 12%;
+	}
+	h4
+	{
+		position: absolute;
+		bottom: 0%;
+		right: 12%;
+	}
+	.text
+	{
+		position: relative;
+		text-align: center;
+		color: ghostwhite;
+		font-size: 36px;
+	}
+	.centered
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}

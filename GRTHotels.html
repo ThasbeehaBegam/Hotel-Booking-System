@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css.css">
+    <title>Hotel GRT</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+</script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color: #F08080;">
+    <a href="index.html" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-home"></span> Home
+  </a><table>
+    <tr><th colspan="2" style="text-align:center;">Hotel GRT</th></tr>
+    <tr><td width="600px" align="center"><form action="dbcon.jsp?hid=GRT" method="post">
+        <label><i class="fa fa-user"></i>   Name:</label><br>
+        <input type="text" name="name"><br>
+        <label><i class="fa fa-phone"></i>  Mobile No:</label><br>
+        <input type="number" name="no"><br>
+    <label><i class="fa fa-calendar"></i> Check-in:</label><br>
+    <input type="date" name="dt" min="2021-08-04"><br>
+    <label><i class="fa fa-calendar"></i> Check-out:</label><br>
+    <input type="date" name="checkout" min="2021-08-04"><br>
+        <label><i class="fa fa-users"></i> No of Persons</label><br>
+        <input type="number" name="adults" min="1"><br>
+                <label><i class="fa fa-bed"></i> Select the type of room </label><br>
+        <div ng-app="myapp" ng-controller="myctrl">
+        <select ng-model="rt" name="rt">
+            <option>Twin room</option>
+            <option>Duplex</option>
+            <option>Cabana</option>
+            <option>Suite</option>
+            <option>Murphy room</option>
+        </select><br>
+            <b> Number Of Rooms</b><br>
+                <input type="number" name="rooms" min="1" ng-model="a" ><br>
+                <p><b>Tariff:</b> <i class="fa fa-rupee"></i> {{result()}}</p></div>
+                <script>
+    var app = angular.module("myapp", []);
+    app.controller("myctrl", function ($scope) 
+    {
+    $scope.result = function ()
+    {
+        if($scope.rt=='Twin room')
+        {
+            return $scope.a*1500;
+        }
+        if($scope.rt=='Duplex')
+        {
+            return $scope.a*2000;
+        }
+        if($scope.rt=='Cabana')
+        {
+            return $scope.a*3000;
+        }
+        if($scope.rt=='Suite')
+        {
+            return $scope.a*1500;
+        }
+        if($scope.rt=='Murphy room')
+        {
+            return $scope.a*2500;
+        }
+    };
+});
+</script><br>
+                <input type="submit" name="Submit"></form></td>
+<td><img src="https://gos3.ibcdn.com/3169ad6c630911e78a4f0a4cef95d023.jpg">
+<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/9d/2f/14/deluxe-room.jpg?w=900&h=-1&s=1">
+<img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/76946200.jpg?k=3c5e2d201a4d449c9a3888c75ed38d63d3c5627487f7974828c3dbbdabfd26ee&o=&hp=1">
+<img src="https://aff.bstatic.com/images/hotel/840x460/283/283102761.jpg"></td></tr></table>
+</body>
+</html>
